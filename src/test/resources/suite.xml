@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="API Testing Test suite" verbose="1">
+    <listeners>
+        <listener class-name="org.Globant.utils.Listener"></listener>
+    </listeners>
+
+    <parameter name="endpoint" value="https://637d966d9c2635df8f89fa85.mockapi.io/bankTransactions/"></parameter>
+
+    <test name="Empty endpoint verification test">
+        <classes>
+            <class name="org.Globant.tests.EndpointEmptyTest"></class>
+        </classes>
+    </test>
+    <test name="POJO initialization with random data and duplicate email check test">
+        <classes>
+            <class name="org.Globant.tests.CreateTransactionsTest"></class>
+        </classes>
+    </test>
+    <test name="Obtain all bank transaction from endpoint and duplicate email check test">
+        <classes>
+            <class name="org.Globant.tests.ObtainTransactionsTest"></class>
+        </classes>
+    </test>
+    <test name="Update an existing account number test">
+        <classes>
+            <class name="org.Globant.tests.UpdateTransactionTest"></class>
+        </classes>
+    </test>
+</suite>
